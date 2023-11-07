@@ -13,7 +13,9 @@ const TodoList = ({ todos, handleDelete, handleToggle, isDoneState }) => {
                 <h3>{todo.title}</h3>
                 <p>{todo.body}</p>
                 <button onClick={() => handleDelete(todo.id)}>삭제</button>
-                <button onClick={() => handleToggle(todo.id)}>완료</button>
+                <button onClick={() => handleToggle(todo.id)}>
+                  {isDoneState ? '취소' : '완료'}
+                </button>
               </div>
             );
           })}

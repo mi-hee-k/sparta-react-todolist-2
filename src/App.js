@@ -41,7 +41,10 @@ function App() {
   };
 
   const handleDelete = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    if (window.confirm('정말 삭제하시겠습니까?')) {
+      setTodos(todos.filter((todo) => todo.id !== id));
+    }
+    return;
   };
 
   const handleToggle = (id) => {
